@@ -7,8 +7,9 @@ const connect = function () {
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
-
-
+  conn.on('connect', () => {
+    conn.write("Name: DAN"); // writes data to the server
+  });
   return conn;
 };
 
